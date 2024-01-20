@@ -20,37 +20,30 @@ class Controller: UIViewController {
         navigationItem.rightBarButtonItem = .init(systemItem: .camera, primaryAction: .init { [unowned self] _ in
             var configuration = PHPickerConfiguration(photoLibrary: .shared())
             configuration.disabledCapabilities = [
-                .search,
+//                .search,
                 .stagingArea,
-                .collectionNavigation,
-                .selectionActions,
-                .sensitivityAnalysisIntervention,
+//                .collectionNavigation,
+//                .selectionActions,
+//                .sensitivityAnalysisIntervention,
             ]
-            //configuration.edgesWithoutContentMargins = .leading
             configuration.filter = .images
-            //configuration.mode = .compact
-            //configuration.preferredAssetRepresentationMode = .automatic
-            //configuration.preselectedAssetIdentifiers
+            configuration.mode = .default
+            configuration.preferredAssetRepresentationMode = .automatic
             // how to distinguish tap on Done from selection in `continuous` mode?
-            //configuration.selection = .continuousAndOrdered
+            configuration.selection = .ordered
             configuration.selectionLimit = 0
             configuration.edgesWithoutContentMargins = .all
 
-            let controller = PHPickerViewController(configuration: configuration)
-            controller.delegate = self
+            let pickerController = PHPickerViewController(configuration: configuration)
+            pickerController.delegate = self
 
-            //navigationController?.pushViewController(controller, animated: true)
-            //present(controller, animated: true)
-
-            if let sheet = controller.sheetPresentationController {
-                sheet.detents = [.medium(), .large()]
-                sheet.largestUndimmedDetentIdentifier = .medium
-                sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-                sheet.prefersEdgeAttachedInCompactHeight = true
-                sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
-            }
-            present(controller, animated: true, completion: nil)
-
+            let sheet = pickerController.sheetPresentationController!
+            sheet.detents = [.medium(),.large()]
+            sheet.largestUndimmedDetentIdentifier = .medium
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.prefersGrabberVisible = true
+            sheet.delegate = self
+            present(pickerController, animated: true, completion: nil)
         })
     }
 }
@@ -58,5 +51,26 @@ class Controller: UIViewController {
 extension Controller: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         print(results)
+    }
+}
+
+extension Controller: UISheetPresentationControllerDelegate {
+    func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheet: UISheetPresentationController) {
+        if sheet.selectedDetentIdentifier == .large  {
+            sheet.detents = [.large()]
+            let pickerController = sheet.presentedViewController as! PHPickerViewController
+            sheet.animateChanges {
+                var update = PHPickerConfiguration.Update()
+                update.edgesWithoutContentMargins = pickerController.configuration.edgesWithoutContentMargins
+                update.edgesWithoutContentMargins?.subtract(.top)
+                pickerController.updatePicker(using: update)
+
+                DispatchQueue.main.async {
+                    pickerController.scrollToInitialPosition()
+                }
+
+                sheet.prefersGrabberVisible = false
+            }
+        }
     }
 }
