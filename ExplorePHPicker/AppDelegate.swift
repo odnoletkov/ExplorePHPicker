@@ -58,18 +58,17 @@ extension Controller: UISheetPresentationControllerDelegate {
     func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheet: UISheetPresentationController) {
         print("\(#function)")
 
-        guard sheet.selectedDetentIdentifier == .large && sheet.detents != [.large()] else {
-            return
-        }
-
         let pickerController = sheet.presentedViewController as! PHPickerViewController
         pickerController.updatePicker(using: {
             var update = PHPickerConfiguration.Update()
             update.edgesWithoutContentMargins = pickerController.configuration.edgesWithoutContentMargins
-            update.edgesWithoutContentMargins?.subtract(.top)
+            if sheet.selectedDetentIdentifier == .large {
+                update.edgesWithoutContentMargins?.subtract(.top)
+            } else {
+                update.edgesWithoutContentMargins?.formUnion(.top)
+            }
             return update
         }())
-        sheet.prefersGrabberVisible = false
     }
 }
 
