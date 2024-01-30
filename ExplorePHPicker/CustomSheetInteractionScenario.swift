@@ -1,5 +1,6 @@
 import UIKit
 import PhotosUI
+import SheetInteraction
 
 @available(iOS 17, *)
 class CustomSheetInteractionScenario: NSObject, Scenario {

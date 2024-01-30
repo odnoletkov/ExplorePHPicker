@@ -1,0 +1,13 @@
+{
+  "pins" : [
+    {
+      "identity" : "sheetinteraction",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/boscojwho/SheetInteraction",
+      "state" : {
+        "revision" : "e4dd48bc0e36c2572680c6e01d52c41275c02bf7"
+      }
+    }
+  ],
+  "version" : 2
+}
