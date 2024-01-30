@@ -2,8 +2,8 @@ import UIKit
 import PhotosUI
 
 @available(iOS 17, *)
-class SheetPresentationControllerScenario: NSObject, Scenario {
-    let title = "Use Sheet Presentation Controller (iOS 15)"
+class CustomSheetPresentationScenario: NSObject, Scenario {
+    let title = "Use Custom Sheet Presentation (iOS 17)"
 
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
@@ -17,7 +17,6 @@ class SheetPresentationControllerScenario: NSObject, Scenario {
         configuration.filter = .images
         configuration.mode = .default
         configuration.preferredAssetRepresentationMode = .automatic
-        // how to distinguish tap on Done from selection in `continuous` mode?
         configuration.selection = .ordered
         configuration.selectionLimit = 0
         configuration.edgesWithoutContentMargins = .all
@@ -37,14 +36,14 @@ class SheetPresentationControllerScenario: NSObject, Scenario {
 }
 
 @available(iOS 17, *)
-extension SheetPresentationControllerScenario: PHPickerViewControllerDelegate {
+extension CustomSheetPresentationScenario: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         print(results)
     }
 }
 
 @available(iOS 17, *)
-extension SheetPresentationControllerScenario: UISheetPresentationControllerDelegate {
+extension CustomSheetPresentationScenario: UISheetPresentationControllerDelegate {
     func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheet: UISheetPresentationController) {
         print("\(#function)")
 
@@ -63,7 +62,7 @@ extension SheetPresentationControllerScenario: UISheetPresentationControllerDele
 }
 
 @available(iOS 17, *)
-extension SheetPresentationControllerScenario: UIAdaptivePresentationControllerDelegate {
+extension CustomSheetPresentationScenario: UIAdaptivePresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         print("\(#function)")
         return .automatic

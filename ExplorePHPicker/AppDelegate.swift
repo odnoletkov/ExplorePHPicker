@@ -46,8 +46,11 @@ class ScenarioSelectionController: UITableViewController {
         dataSource.apply({
             var snapshot = NSDiffableDataSourceSnapshot<Int, AnyHashable>()
             snapshot.appendSections([0])
+            if #available(iOS 15, *) {
+                snapshot.appendItems([SheetPresentationScenario()])
+            }
             if #available(iOS 17, *) {
-                snapshot.appendItems([SheetPresentationControllerScenario()])
+                snapshot.appendItems([CustomSheetPresentationScenario()])
             }
             return snapshot
         }(), animatingDifferences: false)
