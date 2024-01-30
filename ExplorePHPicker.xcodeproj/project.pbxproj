@@ -10,6 +10,7 @@
 		048817542B59754D00287A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048817532B59754D00287A0C /* AppDelegate.swift */; };
 		04ACDF702B6973D50018B3B9 /* CustomSheetPresentationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF6F2B6973D50018B3B9 /* CustomSheetPresentationScenario.swift */; };
 		04ACDF722B6977DE0018B3B9 /* SheetPresentationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF712B6977DE0018B3B9 /* SheetPresentationScenario.swift */; };
+		04ACDF742B69796F0018B3B9 /* ModalPresentationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF732B69796F0018B3B9 /* ModalPresentationScenario.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,7 @@
 		048817532B59754D00287A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04ACDF6F2B6973D50018B3B9 /* CustomSheetPresentationScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheetPresentationScenario.swift; sourceTree = "<group>"; };
 		04ACDF712B6977DE0018B3B9 /* SheetPresentationScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentationScenario.swift; sourceTree = "<group>"; };
+		04ACDF732B69796F0018B3B9 /* ModalPresentationScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationScenario.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 				048817532B59754D00287A0C /* AppDelegate.swift */,
 				04ACDF6F2B6973D50018B3B9 /* CustomSheetPresentationScenario.swift */,
 				04ACDF712B6977DE0018B3B9 /* SheetPresentationScenario.swift */,
+				04ACDF732B69796F0018B3B9 /* ModalPresentationScenario.swift */,
 			);
 			path = ExplorePHPicker;
 			sourceTree = "<group>";
@@ -127,6 +130,7 @@
 				048817542B59754D00287A0C /* AppDelegate.swift in Sources */,
 				04ACDF702B6973D50018B3B9 /* CustomSheetPresentationScenario.swift in Sources */,
 				04ACDF722B6977DE0018B3B9 /* SheetPresentationScenario.swift in Sources */,
+				04ACDF742B69796F0018B3B9 /* ModalPresentationScenario.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

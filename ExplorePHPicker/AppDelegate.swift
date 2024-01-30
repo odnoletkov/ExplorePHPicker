@@ -46,6 +46,7 @@ class ScenarioSelectionController: UITableViewController {
         dataSource.apply({
             var snapshot = NSDiffableDataSourceSnapshot<Int, AnyHashable>()
             snapshot.appendSections([0])
+            snapshot.appendItems([ModalPresentationScenario()])
             if #available(iOS 15, *) {
                 snapshot.appendItems([SheetPresentationScenario()])
             }
