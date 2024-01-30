@@ -1,8 +1,9 @@
 import UIKit
 import PhotosUI
 
+@available(iOS 17, *)
 class PresentFromSheetScenario: NSObject, Scenario {
-    let title = "Present From Sheet"
+    let title = "Use Sheet Presentation (iOS 15)"
 
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
@@ -35,12 +36,14 @@ class PresentFromSheetScenario: NSObject, Scenario {
     }
 }
 
+@available(iOS 17, *)
 extension PresentFromSheetScenario: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         print(results)
     }
 }
 
+@available(iOS 17, *)
 extension PresentFromSheetScenario: UISheetPresentationControllerDelegate {
     func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheet: UISheetPresentationController) {
         print("\(#function)")
@@ -59,6 +62,7 @@ extension PresentFromSheetScenario: UISheetPresentationControllerDelegate {
     }
 }
 
+@available(iOS 17, *)
 extension PresentFromSheetScenario: UIAdaptivePresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         print("\(#function)")
