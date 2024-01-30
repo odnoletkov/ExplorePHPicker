@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		048817542B59754D00287A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048817532B59754D00287A0C /* AppDelegate.swift */; };
+		04ACDF702B6973D50018B3B9 /* PresentFromSheetScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF6F2B6973D50018B3B9 /* PresentFromSheetScenario.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		048817502B59754D00287A0C /* ExplorePHPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExplorePHPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048817532B59754D00287A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04ACDF6F2B6973D50018B3B9 /* PresentFromSheetScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentFromSheetScenario.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				048817532B59754D00287A0C /* AppDelegate.swift */,
+				04ACDF6F2B6973D50018B3B9 /* PresentFromSheetScenario.swift */,
 			);
 			path = ExplorePHPicker;
 			sourceTree = "<group>";
@@ -119,6 +122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				048817542B59754D00287A0C /* AppDelegate.swift in Sources */,
+				04ACDF702B6973D50018B3B9 /* PresentFromSheetScenario.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

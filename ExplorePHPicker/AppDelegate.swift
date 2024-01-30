@@ -6,8 +6,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        let controller = Controller()
-        controller.view.backgroundColor = .secondarySystemBackground
+        let controller = ScenarioSelectionController(nibName: nil, bundle: nil)
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.rootViewController = UINavigationController(rootViewController: controller)
         window!.makeKeyAndVisible()
@@ -15,101 +14,47 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
 }
 
-class Controller: UIViewController {
+protocol Scenario: NSObjectProtocol {
+    var title: String { get }
+    func start(from fromController: UIViewController)
+}
+
+class ScenarioSelectionController: UITableViewController {
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(style: .insetGrouped)
+    }
+
+    typealias DataSource = UITableViewDiffableDataSource<Int, AnyHashable>
+
+    required init?(coder: NSCoder) { fatalError() }
+
+    lazy var dataSource: DataSource = UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, scenario in
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.contentConfiguration = {
+            var config = UIListContentConfiguration.cell()
+            config.text = (scenario.base as! any Scenario).title
+            return config
+        }()
+        return cell
+    }
+
     override func viewDidLoad() {
-        navigationItem.rightBarButtonItem = .init(systemItem: .camera, primaryAction: .init { [unowned self] _ in
-            var configuration = PHPickerConfiguration(photoLibrary: .shared())
-            configuration.disabledCapabilities = [
-//                .search,
-                .stagingArea,
-//                .collectionNavigation,
-//                .selectionActions,
-//                .sensitivityAnalysisIntervention,
-            ]
-            configuration.filter = .images
-            configuration.mode = .default
-            configuration.preferredAssetRepresentationMode = .automatic
-            // how to distinguish tap on Done from selection in `continuous` mode?
-            configuration.selection = .ordered
-            configuration.selectionLimit = 0
-            configuration.edgesWithoutContentMargins = .all
+        super.viewDidLoad()
 
-            let pickerController = PHPickerViewController(configuration: configuration)
-            pickerController.delegate = self
-
-            let sheet = pickerController.sheetPresentationController!
-            sheet.detents = [.medium(),.large()]
-            sheet.largestUndimmedDetentIdentifier = .medium
-            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-            sheet.prefersGrabberVisible = true
-            sheet.delegate = self
-            present(pickerController, animated: true, completion: nil)
-        })
-    }
-}
-
-extension Controller: PHPickerViewControllerDelegate {
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        print(results)
-    }
-}
-
-extension Controller: UISheetPresentationControllerDelegate {
-    func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheet: UISheetPresentationController) {
-        print("\(#function)")
-
-        let pickerController = sheet.presentedViewController as! PHPickerViewController
-        pickerController.updatePicker(using: {
-            var update = PHPickerConfiguration.Update()
-            update.edgesWithoutContentMargins = pickerController.configuration.edgesWithoutContentMargins
-            if sheet.selectedDetentIdentifier == .large {
-                update.edgesWithoutContentMargins?.subtract(.top)
-            } else {
-                update.edgesWithoutContentMargins?.formUnion(.top)
-            }
-            return update
-        }())
-    }
-}
-
-extension Controller: UIAdaptivePresentationControllerDelegate {
-    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        print("\(#function)")
-        return .automatic
+        dataSource.apply({
+            var snapshot = NSDiffableDataSourceSnapshot<Int, AnyHashable>()
+            snapshot.appendSections([0])
+            snapshot.appendItems([
+                PresentFromSheetScenario(),
+            ])
+            return snapshot
+        }(), animatingDifferences: false)
     }
 
-    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
-        print("\(#function)")
-        return .automatic
-    }
-
-    func presentationController(_ presentationController: UIPresentationController, prepare adaptivePresentationController: UIPresentationController) {
-        print("\(#function)")
-    }
-
-    func presentationController(_ controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
-        print("\(#function)")
-        return nil
-    }
-
-    func presentationController(_ presentationController: UIPresentationController, willPresentWithAdaptiveStyle style: UIModalPresentationStyle, transitionCoordinator: UIViewControllerTransitionCoordinator?) {
-        print("\(#function)")
-    }
-
-    func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
-        print("\(#function)")
-        return true
-    }
-
-    func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
-        print("\(#function)")
-    }
-
-    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
-        print("\(#function)")
-    }
-
-    func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
-        print("\(#function)")
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        (dataSource.itemIdentifier(for: indexPath)!.base as! any Scenario).start(from: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
