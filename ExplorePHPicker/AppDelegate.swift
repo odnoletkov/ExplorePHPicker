@@ -53,6 +53,9 @@ class ScenarioSelectionController: UITableViewController {
             if #available(iOS 17, *) {
                 snapshot.appendItems([CustomSheetPresentationScenario()])
             }
+            if #available(iOS 17, *) {
+                snapshot.appendItems([CustomSheetInteractionScenario()])
+            }
             return snapshot
         }(), animatingDifferences: false)
     }
