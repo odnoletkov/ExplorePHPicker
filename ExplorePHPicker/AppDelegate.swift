@@ -60,6 +60,10 @@ class ScenarioSelectionController: UITableViewController {
         }(), animatingDifferences: false)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+//        tableView(tableView, didSelectRowAt: dataSource.indexPath(for: dataSource.snapshot().itemIdentifiers.last!)!)
+    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         (dataSource.itemIdentifier(for: indexPath)!.base as! any Scenario).start(from: self)
         tableView.deselectRow(at: indexPath, animated: true)

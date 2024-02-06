@@ -2,6 +2,11 @@ import UIKit
 import PhotosUI
 import SheetInteraction
 
+let detents = [
+    UISheetPresentationController.Detent.custom { _ in 300 },
+    .large(),
+]
+
 @available(iOS 17, *)
 class CustomSheetInteractionScenario: NSObject, Scenario {
     let title = "Custom Sheet Interaction (iOS 17)"
@@ -25,11 +30,8 @@ class CustomSheetInteractionScenario: NSObject, Scenario {
         hostingController.hostedController = pickerController
 
         if let sheet = hostingController.sheetPresentationController {
-            sheet.detents = [
-                .custom { _ in 400 },
-                .large(),
-            ]
-            sheet.prefersGrabberVisible = true
+            sheet.detents = detents
+//            sheet.prefersGrabberVisible = true
         }
 
         fromController.present(hostingController, animated: true)
@@ -42,22 +44,44 @@ class PickerHostingController: UIViewController {
 
     private lazy var sheetInteraction: SheetInteraction = .init(sheet: sheetPresentationController!, sheetView: view)
 
+    var topConstraint: NSLayoutConstraint!
+
+    var transitionPercentage: Double = 0 {
+        didSet {
+            view.setNeedsUpdateConstraints()
+        }
+    }
+    var applyInsetForNavigationBar = false {
+        didSet {
+            view.setNeedsUpdateConstraints()
+        }
+    }
+
     override func viewDidLoad() {
-        view.backgroundColor = .gray
+        view.backgroundColor = .systemBackground
 
         addChild(hostedController)
         hostedController.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(hostedController.view)
+
+        topConstraint = hostedController.view.topAnchor.constraint(equalTo: view.topAnchor)
+
         NSLayoutConstraint.activate([
             hostedController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             hostedController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            hostedController.view.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            topConstraint,
             hostedController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         hostedController.didMove(toParent: self)
 
         sheetInteraction.delegate = self
         sheetInteraction.sheetInteractionGesture.delegate = self
+    }
+
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        let insetForNavigationBar = 54 as Double
+        topConstraint.constant = 20 + (applyInsetForNavigationBar ? 0 : insetForNavigationBar * transitionPercentage)
     }
 }
 
@@ -69,19 +93,37 @@ extension PickerHostingController: SheetStackInteractionForwardingBehavior {
 
 extension PickerHostingController: SheetInteractionDelegate {
     func sheetInteractionBegan(sheetInteraction: SheetInteraction, at detent: DetentIdentifier) {
-        print("\(#function): \(detent)")
+//        print("\(#function): \(detent)")
     }
     
     func sheetInteractionChanged(sheetInteraction: SheetInteraction, interactionChange: SheetInteraction.Change) {
-        print("\(#function): \(interactionChange)")
+//        print("\(#function): \(interactionChange)")
+        transitionPercentage = interactionChange.percentageTotal
     }
     
     func sheetInteractionWillEnd(sheetInteraction: SheetInteraction, targetDetentInfo: SheetInteraction.Change.Info, targetPercentageTotal: CGFloat, onTouchUpPercentageTotal: CGFloat) {
-        print("\(#function): \(targetDetentInfo), \(targetPercentageTotal), \(onTouchUpPercentageTotal)")
+//        print("\(#function): \(targetDetentInfo), \(targetPercentageTotal), \(onTouchUpPercentageTotal)")
+//        transitionPercentage = targetPercentageTotal
+
+
     }
     
     func sheetInteractionDidEnd(sheetInteraction: SheetInteraction, selectedDetentIdentifier: UISheetPresentationController.Detent.Identifier) {
-        print("\(#function): \(selectedDetentIdentifier)")
+//        print("\(#function): \(selectedDetentIdentifier)")
+
+        let isExpanded = selectedDetentIdentifier == detents.last!.identifier
+        let pickerController = hostedController as! PHPickerViewController
+        pickerController.updatePicker(using: {
+            var update = PHPickerConfiguration.Update()
+            update.edgesWithoutContentMargins = pickerController.configuration.edgesWithoutContentMargins
+            if isExpanded {
+                update.edgesWithoutContentMargins?.subtract(.top)
+            } else {
+                update.edgesWithoutContentMargins?.formUnion(.top)
+            }
+            return update
+        }())
+        applyInsetForNavigationBar = isExpanded
     }
     
     func sheetInteractionShouldDismiss(sheetInteraction: SheetInteraction) -> Bool {
