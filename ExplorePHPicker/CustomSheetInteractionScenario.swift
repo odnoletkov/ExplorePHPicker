@@ -25,7 +25,10 @@ class CustomSheetInteractionScenario: NSObject, Scenario {
         hostingController.hostedController = pickerController
 
         if let sheet = hostingController.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
+            sheet.detents = [
+                .custom { _ in 400 },
+                .large(),
+            ]
             sheet.prefersGrabberVisible = true
         }
 
@@ -43,35 +46,51 @@ class PickerHostingController: UIViewController {
         view.backgroundColor = .gray
 
         addChild(hostedController)
-        hostedController.view.translatesAutoresizingMaskIntoConstraints = true
-        hostedController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        hostedController.view.frame = view.bounds
+        hostedController.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(hostedController.view)
+        NSLayoutConstraint.activate([
+            hostedController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hostedController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            hostedController.view.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            hostedController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
         hostedController.didMove(toParent: self)
 
-//        sheetInteraction.sheetInteractionGesture.delegate = self
         sheetInteraction.delegate = self
+        sheetInteraction.sheetInteractionGesture.delegate = self
+    }
+}
+
+extension PickerHostingController: SheetStackInteractionForwardingBehavior {
+    func shouldHandleSheetInteraction() -> Bool {
+        return true
     }
 }
 
 extension PickerHostingController: SheetInteractionDelegate {
     func sheetInteractionBegan(sheetInteraction: SheetInteraction, at detent: DetentIdentifier) {
-
+        print("\(#function): \(detent)")
     }
     
     func sheetInteractionChanged(sheetInteraction: SheetInteraction, interactionChange: SheetInteraction.Change) {
-
+        print("\(#function): \(interactionChange)")
     }
     
     func sheetInteractionWillEnd(sheetInteraction: SheetInteraction, targetDetentInfo: SheetInteraction.Change.Info, targetPercentageTotal: CGFloat, onTouchUpPercentageTotal: CGFloat) {
-
+        print("\(#function): \(targetDetentInfo), \(targetPercentageTotal), \(onTouchUpPercentageTotal)")
     }
     
     func sheetInteractionDidEnd(sheetInteraction: SheetInteraction, selectedDetentIdentifier: UISheetPresentationController.Detent.Identifier) {
-
+        print("\(#function): \(selectedDetentIdentifier)")
     }
     
     func sheetInteractionShouldDismiss(sheetInteraction: SheetInteraction) -> Bool {
         true
+    }
+}
+
+extension PickerHostingController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        gestureRecognizer == sheetInteraction.sheetInteractionGesture
     }
 }
