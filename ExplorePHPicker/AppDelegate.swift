@@ -56,6 +56,9 @@ class ScenarioSelectionController: UITableViewController {
             if #available(iOS 17, *) {
                 snapshot.appendItems([CustomSheetInteractionScenario()])
             }
+            if #available(iOS 17, *) {
+                snapshot.appendItems([ToggleNavigationBarScenario()])
+            }
             return snapshot
         }(), animatingDifferences: false)
     }

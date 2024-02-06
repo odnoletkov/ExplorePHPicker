@@ -113,16 +113,7 @@ extension PickerHostingController: SheetInteractionDelegate {
 
         let isExpanded = selectedDetentIdentifier == detents.last!.identifier
         let pickerController = hostedController as! PHPickerViewController
-        pickerController.updatePicker(using: {
-            var update = PHPickerConfiguration.Update()
-            update.edgesWithoutContentMargins = pickerController.configuration.edgesWithoutContentMargins
-            if isExpanded {
-                update.edgesWithoutContentMargins?.subtract(.top)
-            } else {
-                update.edgesWithoutContentMargins?.formUnion(.top)
-            }
-            return update
-        }())
+        pickerController.navigationBarVisible = isExpanded
         applyInsetForNavigationBar = isExpanded
     }
     
@@ -134,5 +125,25 @@ extension PickerHostingController: SheetInteractionDelegate {
 extension PickerHostingController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         gestureRecognizer == sheetInteraction.sheetInteractionGesture
+    }
+}
+
+extension PHPickerViewController {
+    var navigationBarVisible: Bool {
+        get {
+            !configuration.edgesWithoutContentMargins.contains(.top)
+        }
+        set {
+            updatePicker(using: {
+                var update = PHPickerConfiguration.Update()
+                update.edgesWithoutContentMargins = configuration.edgesWithoutContentMargins
+                if newValue {
+                    update.edgesWithoutContentMargins?.subtract(.top)
+                } else {
+                    update.edgesWithoutContentMargins?.formUnion(.top)
+                }
+                return update
+            }())
+        }
     }
 }
