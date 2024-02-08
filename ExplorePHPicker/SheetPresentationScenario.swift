@@ -18,7 +18,7 @@ class SheetPresentationScenario: NSObject, Scenario {
         let sheet = pickerController.sheetPresentationController!
         sheet.detents = [.medium(), .large()]
         sheet.largestUndimmedDetentIdentifier = .medium
-        sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+        sheet.prefersScrollingExpandsWhenScrolledToEdge = true
         sheet.prefersGrabberVisible = true
 
         fromController.present(pickerController, animated: true)
