@@ -38,7 +38,7 @@ class CustomSheetInteractionScenario: NSObject, Scenario {
     }
 }
 
-class PickerHostingController: UIViewController {
+private class PickerHostingController: UIViewController {
 
     var hostedController: UIViewController!
 

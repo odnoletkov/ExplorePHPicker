@@ -59,12 +59,18 @@ class ScenarioSelectionController: UITableViewController {
             if #available(iOS 17, *) {
                 snapshot.appendItems([ToggleNavigationBarScenario()])
             }
+            if #available(iOS 15, *) {
+                snapshot.appendItems([CustomButtonsScenario()])
+            }
             return snapshot
         }(), animatingDifferences: false)
     }
 
     override func viewDidAppear(_ animated: Bool) {
-//        tableView(tableView, didSelectRowAt: dataSource.indexPath(for: dataSource.snapshot().itemIdentifiers.last!)!)
+        let index = ProcessInfo.processInfo.environment["START_SCENARIO_INDEX"].map { Int($0)! }
+        if let index {
+            tableView(tableView, didSelectRowAt: dataSource.indexPath(for: dataSource.snapshot().itemIdentifiers[index])!)
+        }
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

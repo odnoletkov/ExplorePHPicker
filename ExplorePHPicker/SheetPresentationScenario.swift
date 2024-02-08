@@ -7,6 +7,10 @@ class SheetPresentationScenario: NSObject, Scenario {
 
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
+        configuration.disabledCapabilities = [
+            .stagingArea,
+//            .selectionActions,
+        ]
         configuration.filter = .images
         configuration.preferredAssetRepresentationMode = .automatic
         configuration.selection = .ordered

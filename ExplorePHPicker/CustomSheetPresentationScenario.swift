@@ -58,6 +58,7 @@ extension CustomSheetPresentationScenario: UISheetPresentationControllerDelegate
             }
             return update
         }())
+//        pickerController.scrollToInitialPosition()
     }
 }
 
