@@ -11,6 +11,7 @@
 		048817542B59754D00287A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048817532B59754D00287A0C /* AppDelegate.swift */; };
 		04A2BCF22B72BFCB0056A23F /* ToggleNavigationBarScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A2BCF12B72BFCB0056A23F /* ToggleNavigationBarScenario.swift */; };
 		04A2D4C22B74F3E80056A23F /* CustomButtonsScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A2D4C12B74F3E80056A23F /* CustomButtonsScenario.swift */; };
+		04A515182B766FA8002CE0B8 /* PickerSheetInteractionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A515172B766FA8002CE0B8 /* PickerSheetInteractionScenario.swift */; };
 		04ACDF702B6973D50018B3B9 /* CustomSheetPresentationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF6F2B6973D50018B3B9 /* CustomSheetPresentationScenario.swift */; };
 		04ACDF722B6977DE0018B3B9 /* SheetPresentationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF712B6977DE0018B3B9 /* SheetPresentationScenario.swift */; };
 		04ACDF742B69796F0018B3B9 /* ModalPresentationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF732B69796F0018B3B9 /* ModalPresentationScenario.swift */; };
@@ -22,6 +23,7 @@
 		048817532B59754D00287A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04A2BCF12B72BFCB0056A23F /* ToggleNavigationBarScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleNavigationBarScenario.swift; sourceTree = "<group>"; };
 		04A2D4C12B74F3E80056A23F /* CustomButtonsScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonsScenario.swift; sourceTree = "<group>"; };
+		04A515172B766FA8002CE0B8 /* PickerSheetInteractionScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSheetInteractionScenario.swift; sourceTree = "<group>"; };
 		04ACDF6F2B6973D50018B3B9 /* CustomSheetPresentationScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheetPresentationScenario.swift; sourceTree = "<group>"; };
 		04ACDF712B6977DE0018B3B9 /* SheetPresentationScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentationScenario.swift; sourceTree = "<group>"; };
 		04ACDF732B69796F0018B3B9 /* ModalPresentationScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationScenario.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				04A2D4C12B74F3E80056A23F /* CustomButtonsScenario.swift */,
 				04ACDF732B69796F0018B3B9 /* ModalPresentationScenario.swift */,
 				04ACDF7A2B6985B30018B3B9 /* CustomSheetInteractionScenario.swift */,
+				04A515172B766FA8002CE0B8 /* PickerSheetInteractionScenario.swift */,
 				04A2BCF12B72BFCB0056A23F /* ToggleNavigationBarScenario.swift */,
 			);
 			path = ExplorePHPicker;
@@ -146,6 +149,7 @@
 			files = (
 				048817542B59754D00287A0C /* AppDelegate.swift in Sources */,
 				04ACDF702B6973D50018B3B9 /* CustomSheetPresentationScenario.swift in Sources */,
+				04A515182B766FA8002CE0B8 /* PickerSheetInteractionScenario.swift in Sources */,
 				04A2D4C22B74F3E80056A23F /* CustomButtonsScenario.swift in Sources */,
 				04ACDF722B6977DE0018B3B9 /* SheetPresentationScenario.swift in Sources */,
 				04A2BCF22B72BFCB0056A23F /* ToggleNavigationBarScenario.swift in Sources */,

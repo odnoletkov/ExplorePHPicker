@@ -13,7 +13,7 @@ class SheetPresentationScenario: NSObject, Scenario {
         ]
         configuration.filter = .images
         configuration.preferredAssetRepresentationMode = .automatic
-        configuration.selection = .ordered
+        configuration.selection = .continuousAndOrdered
         configuration.selectionLimit = 0
         configuration.edgesWithoutContentMargins = .all.subtracting(.top)
 

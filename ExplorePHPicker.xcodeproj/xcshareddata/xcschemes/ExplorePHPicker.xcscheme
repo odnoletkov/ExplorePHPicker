@@ -53,7 +53,7 @@
          <EnvironmentVariable
             key = "START_SCENARIO_INDEX"
             value = "5"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>

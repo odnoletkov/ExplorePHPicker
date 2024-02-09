@@ -62,6 +62,9 @@ class ScenarioSelectionController: UITableViewController {
             if #available(iOS 15, *) {
                 snapshot.appendItems([CustomButtonsScenario()])
             }
+            if #available(iOS 15, *) {
+                snapshot.appendItems([PickerSheetInteractionScenario()])
+            }
             return snapshot
         }(), animatingDifferences: false)
     }

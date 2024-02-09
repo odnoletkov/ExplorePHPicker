@@ -36,9 +36,16 @@ class CustomButtonsScenario: NSObject, Scenario {
             sheet.detents = [.medium(), .large()]
             sheet.prefersGrabberVisible = true
             sheet.prefersScrollingExpandsWhenScrolledToEdge = true
+            sheet.delegate = self
         }
 
         fromController.present(hostingController, animated: true)
+    }
+}
+
+extension CustomButtonsScenario: UISheetPresentationControllerDelegate {
+    func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
+        print(sheetPresentationController.selectedDetentIdentifier)
     }
 }
 
