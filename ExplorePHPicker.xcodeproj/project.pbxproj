@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040E01C62B7298EA00F08004 /* SheetInteraction in Frameworks */ = {isa = PBXBuildFile; productRef = 040E01C52B7298EA00F08004 /* SheetInteraction */; };
 		048817542B59754D00287A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048817532B59754D00287A0C /* AppDelegate.swift */; };
 		04A2BCF22B72BFCB0056A23F /* ToggleNavigationBarScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A2BCF12B72BFCB0056A23F /* ToggleNavigationBarScenario.swift */; };
 		04A2D4C22B74F3E80056A23F /* CustomButtonsScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A2D4C12B74F3E80056A23F /* CustomButtonsScenario.swift */; };
@@ -16,6 +15,7 @@
 		04ACDF722B6977DE0018B3B9 /* SheetPresentationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF712B6977DE0018B3B9 /* SheetPresentationScenario.swift */; };
 		04ACDF742B69796F0018B3B9 /* ModalPresentationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF732B69796F0018B3B9 /* ModalPresentationScenario.swift */; };
 		04ACDF7B2B6985B30018B3B9 /* CustomSheetInteractionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF7A2B6985B30018B3B9 /* CustomSheetInteractionScenario.swift */; };
+		04ACDF7E2B6986080018B3B9 /* SheetInteraction in Frameworks */ = {isa = PBXBuildFile; productRef = 04ACDF7D2B6986080018B3B9 /* SheetInteraction */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				040E01C62B7298EA00F08004 /* SheetInteraction in Frameworks */,
+				04ACDF7E2B6986080018B3B9 /* SheetInteraction in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			);
 			name = ExplorePHPicker;
 			packageProductDependencies = (
-				040E01C52B7298EA00F08004 /* SheetInteraction */,
+				04ACDF7D2B6986080018B3B9 /* SheetInteraction */,
 			);
 			productName = ExplorePHPicker;
 			productReference = 048817502B59754D00287A0C /* ExplorePHPicker.app */;
@@ -121,7 +121,7 @@
 			);
 			mainGroup = 048817472B59754D00287A0C;
 			packageReferences = (
-				040E01C42B7298EA00F08004 /* XCLocalSwiftPackageReference "submodules/SheetInteraction" */,
+				04ACDF7C2B6986080018B3B9 /* XCRemoteSwiftPackageReference "SheetInteraction" */,
 			);
 			productRefGroup = 048817512B59754D00287A0C /* Products */;
 			projectDirPath = "";
@@ -349,16 +349,21 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		040E01C42B7298EA00F08004 /* XCLocalSwiftPackageReference "submodules/SheetInteraction" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = submodules/SheetInteraction;
+/* Begin XCRemoteSwiftPackageReference section */
+		04ACDF7C2B6986080018B3B9 /* XCRemoteSwiftPackageReference "SheetInteraction" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/boscojwho/SheetInteraction";
+			requirement = {
+				kind = revision;
+				revision = e4dd48bc0e36c2572680c6e01d52c41275c02bf7;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		040E01C52B7298EA00F08004 /* SheetInteraction */ = {
+		04ACDF7D2B6986080018B3B9 /* SheetInteraction */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 04ACDF7C2B6986080018B3B9 /* XCRemoteSwiftPackageReference "SheetInteraction" */;
 			productName = SheetInteraction;
 		};
 /* End XCSwiftPackageProductDependency section */
