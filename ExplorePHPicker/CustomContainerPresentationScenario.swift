@@ -8,7 +8,7 @@ let detents = [
 ]
 
 @available(iOS 17, *)
-class CustomSheetInteractionScenario: NSObject, Scenario {
+class CustomContainerPresentationScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
         configuration.disabledCapabilities = [

@@ -2,7 +2,7 @@ import UIKit
 import PhotosUI
 
 @available(iOS 17, *)
-class CustomButtonsScenario: NSObject, Scenario {
+class ButtonsOverlayScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
         configuration.disabledCapabilities = [
@@ -41,14 +41,14 @@ class CustomButtonsScenario: NSObject, Scenario {
     }
 }
 
-extension CustomButtonsScenario: UISheetPresentationControllerDelegate {
+extension ButtonsOverlayScenario: UISheetPresentationControllerDelegate {
     func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
         print(sheetPresentationController.selectedDetentIdentifier as Any)
     }
 }
 
 @available(iOS 17, *)
-extension CustomButtonsScenario: PHPickerViewControllerDelegate {
+extension ButtonsOverlayScenario: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         print(results)
 //        picker.deselectAssets(withIdentifiers: results.compactMap(\.assetIdentifier))

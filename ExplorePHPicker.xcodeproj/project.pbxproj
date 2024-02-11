@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		048817542B59754D00287A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048817532B59754D00287A0C /* AppDelegate.swift */; };
 		04A2BCF22B72BFCB0056A23F /* ToggleNavigationBarScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A2BCF12B72BFCB0056A23F /* ToggleNavigationBarScenario.swift */; };
-		04A2D4C22B74F3E80056A23F /* CustomButtonsScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A2D4C12B74F3E80056A23F /* CustomButtonsScenario.swift */; };
-		04A515182B766FA8002CE0B8 /* PickerSheetInteractionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A515172B766FA8002CE0B8 /* PickerSheetInteractionScenario.swift */; };
-		04ACDF702B6973D50018B3B9 /* CustomSheetPresentationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF6F2B6973D50018B3B9 /* CustomSheetPresentationScenario.swift */; };
-		04ACDF722B6977DE0018B3B9 /* SheetPresentationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF712B6977DE0018B3B9 /* SheetPresentationScenario.swift */; };
-		04ACDF742B69796F0018B3B9 /* ModalPresentationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF732B69796F0018B3B9 /* ModalPresentationScenario.swift */; };
-		04ACDF7B2B6985B30018B3B9 /* CustomSheetInteractionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF7A2B6985B30018B3B9 /* CustomSheetInteractionScenario.swift */; };
+		04A2D4C22B74F3E80056A23F /* ButtonsOverlayScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A2D4C12B74F3E80056A23F /* ButtonsOverlayScenario.swift */; };
+		04A515182B766FA8002CE0B8 /* SheetPresentationWithCustomInteractionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A515172B766FA8002CE0B8 /* SheetPresentationWithCustomInteractionScenario.swift */; };
+		04ACDF702B6973D50018B3B9 /* SheetPresentationControllingPickerNavigationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF6F2B6973D50018B3B9 /* SheetPresentationControllingPickerNavigationScenario.swift */; };
+		04ACDF722B6977DE0018B3B9 /* PlainSheetPresentationControllerScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF712B6977DE0018B3B9 /* PlainSheetPresentationControllerScenario.swift */; };
+		04ACDF742B69796F0018B3B9 /* PlainModalPresentationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF732B69796F0018B3B9 /* PlainModalPresentationScenario.swift */; };
+		04ACDF7B2B6985B30018B3B9 /* CustomContainerPresentationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACDF7A2B6985B30018B3B9 /* CustomContainerPresentationScenario.swift */; };
 		04ACDF7E2B6986080018B3B9 /* SheetInteraction in Frameworks */ = {isa = PBXBuildFile; productRef = 04ACDF7D2B6986080018B3B9 /* SheetInteraction */; };
 /* End PBXBuildFile section */
 
@@ -22,12 +22,12 @@
 		048817502B59754D00287A0C /* ExplorePHPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExplorePHPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048817532B59754D00287A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04A2BCF12B72BFCB0056A23F /* ToggleNavigationBarScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleNavigationBarScenario.swift; sourceTree = "<group>"; };
-		04A2D4C12B74F3E80056A23F /* CustomButtonsScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonsScenario.swift; sourceTree = "<group>"; };
-		04A515172B766FA8002CE0B8 /* PickerSheetInteractionScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSheetInteractionScenario.swift; sourceTree = "<group>"; };
-		04ACDF6F2B6973D50018B3B9 /* CustomSheetPresentationScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheetPresentationScenario.swift; sourceTree = "<group>"; };
-		04ACDF712B6977DE0018B3B9 /* SheetPresentationScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentationScenario.swift; sourceTree = "<group>"; };
-		04ACDF732B69796F0018B3B9 /* ModalPresentationScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationScenario.swift; sourceTree = "<group>"; };
-		04ACDF7A2B6985B30018B3B9 /* CustomSheetInteractionScenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSheetInteractionScenario.swift; sourceTree = "<group>"; };
+		04A2D4C12B74F3E80056A23F /* ButtonsOverlayScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsOverlayScenario.swift; sourceTree = "<group>"; };
+		04A515172B766FA8002CE0B8 /* SheetPresentationWithCustomInteractionScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentationWithCustomInteractionScenario.swift; sourceTree = "<group>"; };
+		04ACDF6F2B6973D50018B3B9 /* SheetPresentationControllingPickerNavigationScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentationControllingPickerNavigationScenario.swift; sourceTree = "<group>"; };
+		04ACDF712B6977DE0018B3B9 /* PlainSheetPresentationControllerScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainSheetPresentationControllerScenario.swift; sourceTree = "<group>"; };
+		04ACDF732B69796F0018B3B9 /* PlainModalPresentationScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainModalPresentationScenario.swift; sourceTree = "<group>"; };
+		04ACDF7A2B6985B30018B3B9 /* CustomContainerPresentationScenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomContainerPresentationScenario.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +62,13 @@
 			isa = PBXGroup;
 			children = (
 				048817532B59754D00287A0C /* AppDelegate.swift */,
-				04ACDF732B69796F0018B3B9 /* ModalPresentationScenario.swift */,
-				04ACDF712B6977DE0018B3B9 /* SheetPresentationScenario.swift */,
-				04ACDF6F2B6973D50018B3B9 /* CustomSheetPresentationScenario.swift */,
-				04ACDF7A2B6985B30018B3B9 /* CustomSheetInteractionScenario.swift */,
+				04ACDF732B69796F0018B3B9 /* PlainModalPresentationScenario.swift */,
+				04ACDF712B6977DE0018B3B9 /* PlainSheetPresentationControllerScenario.swift */,
+				04ACDF6F2B6973D50018B3B9 /* SheetPresentationControllingPickerNavigationScenario.swift */,
+				04ACDF7A2B6985B30018B3B9 /* CustomContainerPresentationScenario.swift */,
 				04A2BCF12B72BFCB0056A23F /* ToggleNavigationBarScenario.swift */,
-				04A2D4C12B74F3E80056A23F /* CustomButtonsScenario.swift */,
-				04A515172B766FA8002CE0B8 /* PickerSheetInteractionScenario.swift */,
+				04A2D4C12B74F3E80056A23F /* ButtonsOverlayScenario.swift */,
+				04A515172B766FA8002CE0B8 /* SheetPresentationWithCustomInteractionScenario.swift */,
 			);
 			path = ExplorePHPicker;
 			sourceTree = "<group>";
@@ -148,13 +148,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				048817542B59754D00287A0C /* AppDelegate.swift in Sources */,
-				04ACDF702B6973D50018B3B9 /* CustomSheetPresentationScenario.swift in Sources */,
-				04A515182B766FA8002CE0B8 /* PickerSheetInteractionScenario.swift in Sources */,
-				04A2D4C22B74F3E80056A23F /* CustomButtonsScenario.swift in Sources */,
-				04ACDF722B6977DE0018B3B9 /* SheetPresentationScenario.swift in Sources */,
+				04ACDF702B6973D50018B3B9 /* SheetPresentationControllingPickerNavigationScenario.swift in Sources */,
+				04A515182B766FA8002CE0B8 /* SheetPresentationWithCustomInteractionScenario.swift in Sources */,
+				04A2D4C22B74F3E80056A23F /* ButtonsOverlayScenario.swift in Sources */,
+				04ACDF722B6977DE0018B3B9 /* PlainSheetPresentationControllerScenario.swift in Sources */,
 				04A2BCF22B72BFCB0056A23F /* ToggleNavigationBarScenario.swift in Sources */,
-				04ACDF7B2B6985B30018B3B9 /* CustomSheetInteractionScenario.swift in Sources */,
-				04ACDF742B69796F0018B3B9 /* ModalPresentationScenario.swift in Sources */,
+				04ACDF7B2B6985B30018B3B9 /* CustomContainerPresentationScenario.swift in Sources */,
+				04ACDF742B69796F0018B3B9 /* PlainModalPresentationScenario.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

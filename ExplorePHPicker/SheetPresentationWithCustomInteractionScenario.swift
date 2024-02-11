@@ -3,7 +3,7 @@ import PhotosUI
 import SheetInteraction
 
 @available(iOS 17, *)
-class PickerSheetInteractionScenario: NSObject, Scenario {
+class SheetPresentationWithCustomInteractionScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
         configuration.disabledCapabilities = [
@@ -12,9 +12,9 @@ class PickerSheetInteractionScenario: NSObject, Scenario {
         configuration.filter = .images
         configuration.mode = .default
         configuration.preferredAssetRepresentationMode = .automatic
-        configuration.selection = .ordered
+        configuration.selection = .continuous
         configuration.selectionLimit = 0
-        configuration.edgesWithoutContentMargins = .all
+        configuration.edgesWithoutContentMargins = .all.subtracting(.top)
 
         let pickerController = PHPickerViewController(configuration: configuration)
 //        pickerController.delegate = self
@@ -40,13 +40,13 @@ class PickerSheetInteractionScenario: NSObject, Scenario {
     var sheetInteraction: SheetInteraction!
 }
 
-extension PickerSheetInteractionScenario: SheetStackInteractionForwardingBehavior {
+extension SheetPresentationWithCustomInteractionScenario: SheetStackInteractionForwardingBehavior {
     func shouldHandleSheetInteraction() -> Bool {
         return true
     }
 }
 
-extension PickerSheetInteractionScenario: SheetInteractionDelegate {
+extension SheetPresentationWithCustomInteractionScenario: SheetInteractionDelegate {
     func sheetInteractionBegan(sheetInteraction: SheetInteraction, at detent: DetentIdentifier) {
         print("\(#function): \(detent)")
     }
@@ -71,8 +71,10 @@ extension PickerSheetInteractionScenario: SheetInteractionDelegate {
     }
 }
 
-extension PickerSheetInteractionScenario: UIGestureRecognizerDelegate {
+extension SheetPresentationWithCustomInteractionScenario: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         gestureRecognizer == sheetInteraction.sheetInteractionGesture
     }
 }
+
+// po [UISheetPresentationController _shortMethodDescription]

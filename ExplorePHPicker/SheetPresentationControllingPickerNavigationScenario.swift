@@ -2,7 +2,7 @@ import UIKit
 import PhotosUI
 
 @available(iOS 17, *)
-class CustomSheetPresentationScenario: NSObject, Scenario {
+class SheetPresentationControllingPickerNavigationScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
         configuration.disabledCapabilities = [
@@ -34,14 +34,14 @@ class CustomSheetPresentationScenario: NSObject, Scenario {
 }
 
 @available(iOS 17, *)
-extension CustomSheetPresentationScenario: PHPickerViewControllerDelegate {
+extension SheetPresentationControllingPickerNavigationScenario: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         print(results)
     }
 }
 
 @available(iOS 17, *)
-extension CustomSheetPresentationScenario: UISheetPresentationControllerDelegate {
+extension SheetPresentationControllingPickerNavigationScenario: UISheetPresentationControllerDelegate {
     func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheet: UISheetPresentationController) {
         print("\(#function)")
 
@@ -61,7 +61,7 @@ extension CustomSheetPresentationScenario: UISheetPresentationControllerDelegate
 }
 
 @available(iOS 17, *)
-extension CustomSheetPresentationScenario: UIAdaptivePresentationControllerDelegate {
+extension SheetPresentationControllingPickerNavigationScenario: UIAdaptivePresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         print("\(#function)")
         return .automatic
