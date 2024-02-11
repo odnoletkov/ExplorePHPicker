@@ -3,8 +3,6 @@ import PhotosUI
 
 @available(iOS 17, *)
 class ToggleNavigationBarScenario: NSObject, Scenario {
-    let title = "Toggle Navigation Bar (iOS 17)"
-
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
         configuration.disabledCapabilities = [

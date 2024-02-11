@@ -15,7 +15,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 }
 
 protocol Scenario: NSObjectProtocol {
-    var title: String { get }
     func start(from fromController: UIViewController)
 }
 
@@ -34,7 +33,7 @@ class ScenarioSelectionController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.contentConfiguration = {
             var config = UIListContentConfiguration.cell()
-            config.text = (scenario.base as! any Scenario).title
+            config.text = .init(NSStringFromClass(type(of: scenario.base as! any Scenario)).trimmingPrefix(/ExplorePHPicker\./))
             return config
         }()
         return cell

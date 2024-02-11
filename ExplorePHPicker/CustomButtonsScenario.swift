@@ -3,8 +3,6 @@ import PhotosUI
 
 @available(iOS 17, *)
 class CustomButtonsScenario: NSObject, Scenario {
-    let title = "Custom Buttons (iOS 15)"
-
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
         configuration.disabledCapabilities = [
@@ -45,7 +43,7 @@ class CustomButtonsScenario: NSObject, Scenario {
 
 extension CustomButtonsScenario: UISheetPresentationControllerDelegate {
     func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
-        print(sheetPresentationController.selectedDetentIdentifier)
+        print(sheetPresentationController.selectedDetentIdentifier as Any)
     }
 }
 

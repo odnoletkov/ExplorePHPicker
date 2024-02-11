@@ -3,8 +3,6 @@ import PhotosUI
 
 @available(iOS 15, *)
 class SheetPresentationScenario: NSObject, Scenario {
-    let title = "Use Sheet Presentation (iOS 15)"
-
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
         configuration.disabledCapabilities = [

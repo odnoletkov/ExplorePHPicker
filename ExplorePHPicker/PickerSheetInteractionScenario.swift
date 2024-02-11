@@ -4,8 +4,6 @@ import SheetInteraction
 
 @available(iOS 17, *)
 class PickerSheetInteractionScenario: NSObject, Scenario {
-    let title = "Custom Sheet Interaction (iOS 17)"
-
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
         configuration.disabledCapabilities = [

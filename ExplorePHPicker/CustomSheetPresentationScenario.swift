@@ -3,8 +3,6 @@ import PhotosUI
 
 @available(iOS 17, *)
 class CustomSheetPresentationScenario: NSObject, Scenario {
-    let title = "Use Custom Sheet Presentation (iOS 17)"
-
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
         configuration.disabledCapabilities = [
