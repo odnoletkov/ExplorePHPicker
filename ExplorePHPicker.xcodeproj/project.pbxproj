@@ -62,13 +62,13 @@
 			isa = PBXGroup;
 			children = (
 				048817532B59754D00287A0C /* AppDelegate.swift */,
-				04ACDF6F2B6973D50018B3B9 /* CustomSheetPresentationScenario.swift */,
-				04ACDF712B6977DE0018B3B9 /* SheetPresentationScenario.swift */,
-				04A2D4C12B74F3E80056A23F /* CustomButtonsScenario.swift */,
 				04ACDF732B69796F0018B3B9 /* ModalPresentationScenario.swift */,
+				04ACDF712B6977DE0018B3B9 /* SheetPresentationScenario.swift */,
+				04ACDF6F2B6973D50018B3B9 /* CustomSheetPresentationScenario.swift */,
 				04ACDF7A2B6985B30018B3B9 /* CustomSheetInteractionScenario.swift */,
-				04A515172B766FA8002CE0B8 /* PickerSheetInteractionScenario.swift */,
 				04A2BCF12B72BFCB0056A23F /* ToggleNavigationBarScenario.swift */,
+				04A2D4C12B74F3E80056A23F /* CustomButtonsScenario.swift */,
+				04A515172B766FA8002CE0B8 /* PickerSheetInteractionScenario.swift */,
 			);
 			path = ExplorePHPicker;
 			sourceTree = "<group>";
