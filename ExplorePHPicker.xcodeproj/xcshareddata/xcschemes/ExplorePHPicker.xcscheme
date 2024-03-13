@@ -52,7 +52,7 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "START_SCENARIO_INDEX"
-            value = "5"
+            value = "7"
             isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>

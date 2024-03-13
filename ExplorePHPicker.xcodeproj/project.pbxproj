@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047845382BA216EF0066335B /* FullscreenScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047845372BA216EF0066335B /* FullscreenScenario.swift */; };
 		048817542B59754D00287A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048817532B59754D00287A0C /* AppDelegate.swift */; };
 		04A2BCF22B72BFCB0056A23F /* ToggleNavigationBarScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A2BCF12B72BFCB0056A23F /* ToggleNavigationBarScenario.swift */; };
 		04A2D4C22B74F3E80056A23F /* ButtonsOverlayScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A2D4C12B74F3E80056A23F /* ButtonsOverlayScenario.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		047845372BA216EF0066335B /* FullscreenScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenScenario.swift; sourceTree = "<group>"; };
 		048817502B59754D00287A0C /* ExplorePHPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExplorePHPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048817532B59754D00287A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04A2BCF12B72BFCB0056A23F /* ToggleNavigationBarScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleNavigationBarScenario.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				048817532B59754D00287A0C /* AppDelegate.swift */,
 				04ACDF732B69796F0018B3B9 /* PlainModalPresentationScenario.swift */,
+				047845372BA216EF0066335B /* FullscreenScenario.swift */,
 				04ACDF712B6977DE0018B3B9 /* PlainSheetPresentationControllerScenario.swift */,
 				04ACDF6F2B6973D50018B3B9 /* SheetPresentationControllingPickerNavigationScenario.swift */,
 				04ACDF7A2B6985B30018B3B9 /* CustomContainerPresentationScenario.swift */,
@@ -155,6 +158,7 @@
 				04A2BCF22B72BFCB0056A23F /* ToggleNavigationBarScenario.swift in Sources */,
 				04ACDF7B2B6985B30018B3B9 /* CustomContainerPresentationScenario.swift in Sources */,
 				04ACDF742B69796F0018B3B9 /* PlainModalPresentationScenario.swift in Sources */,
+				047845382BA216EF0066335B /* FullscreenScenario.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
