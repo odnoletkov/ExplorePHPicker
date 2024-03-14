@@ -1,7 +1,6 @@
 import UIKit
 import PhotosUI
 
-@available(iOS 15, *)
 class PlainSheetPresentationControllerScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())

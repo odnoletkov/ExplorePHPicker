@@ -2,7 +2,6 @@ import UIKit
 import PhotosUI
 import SheetInteraction
 
-@available(iOS 17, *)
 class SheetPresentationWithCustomInteractionScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())

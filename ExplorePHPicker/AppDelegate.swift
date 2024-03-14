@@ -46,24 +46,12 @@ class ScenarioSelectionController: UITableViewController {
             var snapshot = NSDiffableDataSourceSnapshot<Int, AnyHashable>()
             snapshot.appendSections([0])
             snapshot.appendItems([PlainModalPresentationScenario()])
-            if #available(iOS 15, *) {
-                snapshot.appendItems([PlainSheetPresentationControllerScenario()])
-            }
-            if #available(iOS 17, *) {
-                snapshot.appendItems([SheetPresentationControllingPickerNavigationScenario()])
-            }
-            if #available(iOS 17, *) {
-                snapshot.appendItems([CustomContainerPresentationScenario()])
-            }
-            if #available(iOS 17, *) {
-                snapshot.appendItems([ToggleNavigationBarScenario()])
-            }
-            if #available(iOS 15, *) {
-                snapshot.appendItems([ButtonsOverlayScenario()])
-            }
-            if #available(iOS 15, *) {
-                snapshot.appendItems([SheetPresentationWithCustomInteractionScenario()])
-            }
+            snapshot.appendItems([PlainSheetPresentationControllerScenario()])
+            snapshot.appendItems([SheetPresentationControllingPickerNavigationScenario()])
+            snapshot.appendItems([CustomContainerPresentationScenario()])
+            snapshot.appendItems([ToggleNavigationBarScenario()])
+            snapshot.appendItems([ButtonsOverlayScenario()])
+            snapshot.appendItems([SheetPresentationWithCustomInteractionScenario()])
             snapshot.appendItems([FullscreenWithCustomBarScenario()])
             snapshot.appendItems([FullscreenPlainScenario()])
             return snapshot

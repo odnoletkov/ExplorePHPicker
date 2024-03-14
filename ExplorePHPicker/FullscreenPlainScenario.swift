@@ -1,7 +1,6 @@
 import UIKit
 import PhotosUI
 
-@available(iOS 14, *)
 class FullscreenPlainScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())

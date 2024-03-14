@@ -1,7 +1,6 @@
 import UIKit
 import PhotosUI
 
-@available(iOS 17, *)
 class ButtonsOverlayScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
@@ -47,7 +46,6 @@ extension ButtonsOverlayScenario: UISheetPresentationControllerDelegate {
     }
 }
 
-@available(iOS 17, *)
 extension ButtonsOverlayScenario: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         print(results)

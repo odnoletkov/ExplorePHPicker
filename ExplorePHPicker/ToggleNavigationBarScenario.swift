@@ -1,7 +1,6 @@
 import UIKit
 import PhotosUI
 
-@available(iOS 17, *)
 class ToggleNavigationBarScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())

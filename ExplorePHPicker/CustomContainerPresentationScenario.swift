@@ -7,7 +7,6 @@ let detents = [
     .large(),
 ]
 
-@available(iOS 17, *)
 class CustomContainerPresentationScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())

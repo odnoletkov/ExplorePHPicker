@@ -1,7 +1,6 @@
 import UIKit
 import PhotosUI
 
-@available(iOS 17, *)
 class SheetPresentationControllingPickerNavigationScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
@@ -33,14 +32,12 @@ class SheetPresentationControllingPickerNavigationScenario: NSObject, Scenario {
     }
 }
 
-@available(iOS 17, *)
 extension SheetPresentationControllingPickerNavigationScenario: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         print(results)
     }
 }
 
-@available(iOS 17, *)
 extension SheetPresentationControllingPickerNavigationScenario: UISheetPresentationControllerDelegate {
     func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheet: UISheetPresentationController) {
         print("\(#function)")
@@ -60,7 +57,6 @@ extension SheetPresentationControllingPickerNavigationScenario: UISheetPresentat
     }
 }
 
-@available(iOS 17, *)
 extension SheetPresentationControllingPickerNavigationScenario: UIAdaptivePresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         print("\(#function)")
