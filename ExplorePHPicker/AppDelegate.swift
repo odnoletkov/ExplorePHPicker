@@ -45,15 +45,18 @@ class ScenarioSelectionController: UITableViewController {
         dataSource.apply({
             var snapshot = NSDiffableDataSourceSnapshot<Int, AnyHashable>()
             snapshot.appendSections([0])
-            snapshot.appendItems([PlainModalPresentationScenario()])
-            snapshot.appendItems([PlainSheetPresentationControllerScenario()])
-            snapshot.appendItems([SheetPresentationControllingPickerNavigationScenario()])
-            snapshot.appendItems([CustomContainerPresentationScenario()])
-            snapshot.appendItems([ToggleNavigationBarScenario()])
-            snapshot.appendItems([ButtonsOverlayScenario()])
-            snapshot.appendItems([SheetPresentationWithCustomInteractionScenario()])
-            snapshot.appendItems([FullscreenWithCustomBarScenario()])
-            snapshot.appendItems([FullscreenPlainScenario()])
+            snapshot.appendItems([
+                PlainModalPresentationScenario(),
+                PlainSheetPresentationControllerScenario(),
+                SheetPresentationControllingPickerNavigationScenario(),
+                CustomContainerPresentationScenario(),
+                ToggleNavigationBarScenario(),
+                ButtonsOverlayScenario(),
+                SheetPresentationWithCustomInteractionScenario(),
+                FullscreenWithCustomBarScenario(),
+                FullscreenPlainScenario(),
+                FullscreenWithPresentedBarScenario(),
+            ])
             return snapshot
         }(), animatingDifferences: false)
     }
