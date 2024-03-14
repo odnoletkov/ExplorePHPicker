@@ -2,13 +2,13 @@ import UIKit
 import PhotosUI
 
 @available(iOS 14, *)
-class FullscreenScenario: NSObject, Scenario {
+class FullscreenWithCustomBarScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
         configuration.filter = .images
         configuration.mode = .default
         configuration.preferredAssetRepresentationMode = .automatic
-        configuration.selection = .continuous
+        configuration.selection = .continuousAndOrdered
         configuration.selectionLimit = 0
         configuration.edgesWithoutContentMargins = .all.subtracting(.top)
         configuration.disabledCapabilities = [
@@ -17,7 +17,7 @@ class FullscreenScenario: NSObject, Scenario {
 
         let pickerController = PHPickerViewController(configuration: configuration)
         pickerController.delegate = self
-        pickerController.view.tintColor = .systemGreen
+        pickerController.view.tintColor = .label
 
         let hostingController = FullscreenContainerController()
         hostingController.pickerController = pickerController
@@ -25,7 +25,7 @@ class FullscreenScenario: NSObject, Scenario {
     }
 }
 
-extension FullscreenScenario: PHPickerViewControllerDelegate {
+extension FullscreenWithCustomBarScenario: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         print(results)
         if results.isEmpty {

@@ -64,7 +64,8 @@ class ScenarioSelectionController: UITableViewController {
             if #available(iOS 15, *) {
                 snapshot.appendItems([SheetPresentationWithCustomInteractionScenario()])
             }
-            snapshot.appendItems([FullscreenScenario()])
+            snapshot.appendItems([FullscreenWithCustomBarScenario()])
+            snapshot.appendItems([FullscreenPlainScenario()])
             return snapshot
         }(), animatingDifferences: false)
     }
