@@ -56,6 +56,8 @@ class ScenarioSelectionController: UITableViewController {
                 FullscreenWithCustomBarScenario(),
                 FullscreenPlainScenario(),
                 FullscreenWithPresentedBarScenario(),
+                UIImagePickerControllerScenario(),
+                PrivateAPIOpenToSearchScenario(),
             ])
             return snapshot
         }(), animatingDifferences: false)
