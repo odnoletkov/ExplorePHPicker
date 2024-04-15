@@ -59,6 +59,11 @@ class ScenarioSelectionController: UITableViewController {
                 UIImagePickerControllerScenario(),
                 PrivateAPIOpenToSearchScenario(),
             ])
+
+            snapshot.appendSections([1])
+            snapshot.appendItems([
+                RequestAuthorizationScenario(),
+            ])
             return snapshot
         }(), animatingDifferences: false)
     }

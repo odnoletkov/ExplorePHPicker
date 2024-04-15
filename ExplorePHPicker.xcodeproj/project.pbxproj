@@ -21,6 +21,7 @@
 		04ACDF7E2B6986080018B3B9 /* SheetInteraction in Frameworks */ = {isa = PBXBuildFile; productRef = 04ACDF7D2B6986080018B3B9 /* SheetInteraction */; };
 		04B4B6062BA8826C00A04364 /* UIImagePickerControllerScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4B6052BA8826C00A04364 /* UIImagePickerControllerScenario.swift */; };
 		04B4B6082BAB19F300A04364 /* PrivateAPIOpenToSearchScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4B6072BAB19F300A04364 /* PrivateAPIOpenToSearchScenario.swift */; };
+		04CAF5052BCDAEB1001AF157 /* RequestAuthorizationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAF5042BCDAEB1001AF157 /* RequestAuthorizationScenario.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		04ACDF7A2B6985B30018B3B9 /* CustomContainerPresentationScenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomContainerPresentationScenario.swift; sourceTree = "<group>"; };
 		04B4B6052BA8826C00A04364 /* UIImagePickerControllerScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerControllerScenario.swift; sourceTree = "<group>"; };
 		04B4B6072BAB19F300A04364 /* PrivateAPIOpenToSearchScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateAPIOpenToSearchScenario.swift; sourceTree = "<group>"; };
+		04CAF5042BCDAEB1001AF157 /* RequestAuthorizationScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAuthorizationScenario.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				048817532B59754D00287A0C /* AppDelegate.swift */,
+				04CAF5042BCDAEB1001AF157 /* RequestAuthorizationScenario.swift */,
 				04ACDF732B69796F0018B3B9 /* PlainModalPresentationScenario.swift */,
 				047845372BA216EF0066335B /* FullscreenWithCustomBarScenario.swift */,
 				047845392BA30B920066335B /* FullscreenPlainScenario.swift */,
@@ -169,6 +172,7 @@
 				04A2D4C22B74F3E80056A23F /* ButtonsOverlayScenario.swift in Sources */,
 				04ACDF722B6977DE0018B3B9 /* PlainSheetPresentationControllerScenario.swift in Sources */,
 				04A2BCF22B72BFCB0056A23F /* ToggleNavigationBarScenario.swift in Sources */,
+				04CAF5052BCDAEB1001AF157 /* RequestAuthorizationScenario.swift in Sources */,
 				04ACDF7B2B6985B30018B3B9 /* CustomContainerPresentationScenario.swift in Sources */,
 				04ACDF742B69796F0018B3B9 /* PlainModalPresentationScenario.swift in Sources */,
 				047845382BA216EF0066335B /* FullscreenWithCustomBarScenario.swift in Sources */,
@@ -309,6 +313,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N3Y4SA465S;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = NSPhotoLibraryUsageDescription;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -331,6 +336,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N3Y4SA465S;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = NSPhotoLibraryUsageDescription;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
