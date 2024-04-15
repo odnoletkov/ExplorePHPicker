@@ -8,7 +8,6 @@ class PlainSheetPresentationControllerScenario: NSObject, Scenario {
             .stagingArea,
 //            .selectionActions,
         ]
-        configuration.filter = .images
         configuration.preferredAssetRepresentationMode = .automatic
         configuration.selection = .continuousAndOrdered
         configuration.selectionLimit = 0

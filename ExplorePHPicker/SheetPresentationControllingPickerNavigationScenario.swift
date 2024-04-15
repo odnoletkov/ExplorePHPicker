@@ -11,7 +11,6 @@ class SheetPresentationControllingPickerNavigationScenario: NSObject, Scenario {
 //            .selectionActions,
 //            .sensitivityAnalysisIntervention,
         ]
-        configuration.filter = .images
         configuration.mode = .default
         configuration.preferredAssetRepresentationMode = .automatic
         configuration.selection = .ordered

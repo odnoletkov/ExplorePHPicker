@@ -4,7 +4,6 @@ import PhotosUI
 class PlainModalPresentationScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
-        configuration.filter = .images
         configuration.preferredAssetRepresentationMode = .automatic
         configuration.selectionLimit = 0
 

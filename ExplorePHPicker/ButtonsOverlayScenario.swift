@@ -8,7 +8,6 @@ class ButtonsOverlayScenario: NSObject, Scenario {
             .stagingArea,
 //            .selectionActions,
         ]
-        configuration.filter = .images
         configuration.mode = .default
         configuration.preferredAssetRepresentationMode = .automatic
         configuration.selection = .continuousAndOrdered

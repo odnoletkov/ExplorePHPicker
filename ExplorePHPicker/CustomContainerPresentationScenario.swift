@@ -13,7 +13,6 @@ class CustomContainerPresentationScenario: NSObject, Scenario {
         configuration.disabledCapabilities = [
             .stagingArea,
         ]
-        configuration.filter = .images
         configuration.mode = .default
         configuration.preferredAssetRepresentationMode = .automatic
         configuration.selection = .ordered

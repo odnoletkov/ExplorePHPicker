@@ -4,7 +4,6 @@ import PhotosUI
 class FullscreenWithCustomBarScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
-        configuration.filter = .images
         configuration.mode = .default
         configuration.preferredAssetRepresentationMode = .automatic
         configuration.selection = .continuousAndOrdered
