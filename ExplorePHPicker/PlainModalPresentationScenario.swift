@@ -16,5 +16,11 @@ class PlainModalPresentationScenario: NSObject, Scenario {
 extension PlainModalPresentationScenario: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true)
+        let result = PHAsset.fetchAssets(
+            withLocalIdentifiers: results.compactMap(\.assetIdentifier),
+            options: nil
+        )
+        let phAssets = (0 ..< result.count).map(result.object(at:))
+        print(phAssets)
     }
 }
