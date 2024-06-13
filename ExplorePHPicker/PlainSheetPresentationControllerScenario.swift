@@ -4,14 +4,9 @@ import PhotosUI
 class PlainSheetPresentationControllerScenario: NSObject, Scenario {
     func start(from fromController: UIViewController) {
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
-        configuration.disabledCapabilities = [
-            .stagingArea,
-//            .selectionActions,
-        ]
-        configuration.preferredAssetRepresentationMode = .automatic
-        configuration.selection = .continuousAndOrdered
+        configuration.selection = .ordered
         configuration.selectionLimit = 0
-        configuration.edgesWithoutContentMargins = .all.subtracting(.top)
+//        configuration.edgesWithoutContentMargins = .bottom
 
         let pickerController = PHPickerViewController(configuration: configuration)
 
