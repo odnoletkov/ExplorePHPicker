@@ -24,7 +24,7 @@ class ScenarioSelectionController: UITableViewController {
         super.init(style: .insetGrouped)
     }
 
-    typealias DataSource = UITableViewDiffableDataSource<Int, AnyHashable>
+    typealias DataSource = UITableViewDiffableDataSource<Int, NSObject>
 
     required init?(coder: NSCoder) { fatalError() }
 
@@ -33,7 +33,7 @@ class ScenarioSelectionController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.contentConfiguration = {
             var config = UIListContentConfiguration.cell()
-            config.text = .init(NSStringFromClass(type(of: scenario.base as! any Scenario)).trimmingPrefix(/ExplorePHPicker\./))
+            config.text = .init(NSStringFromClass(type(of: scenario as! any Scenario)).trimmingPrefix(/ExplorePHPicker\./))
             return config
         }()
         return cell
@@ -43,7 +43,7 @@ class ScenarioSelectionController: UITableViewController {
         super.viewDidLoad()
 
         dataSource.apply({
-            var snapshot = NSDiffableDataSourceSnapshot<Int, AnyHashable>()
+            var snapshot = NSDiffableDataSourceSnapshot<Int, NSObject>()
             snapshot.appendSections([0])
             snapshot.appendItems([
                 PlainModalPresentationScenario(),
@@ -76,7 +76,7 @@ class ScenarioSelectionController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        (dataSource.itemIdentifier(for: indexPath)!.base as! any Scenario).start(from: self)
+        (dataSource.itemIdentifier(for: indexPath)! as! Scenario).start(from: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
