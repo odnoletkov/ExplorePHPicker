@@ -83,7 +83,7 @@ private class PickerHostingController: UIViewController {
             topView.topAnchor.constraint(equalTo: view.topAnchor),
             // below 53 selection works with non-0 alpha
             // 193+ selection breaks even with 0 alpha
-            topView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 96),
+            topView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 400),
         ])
 
         let button = UIButton()

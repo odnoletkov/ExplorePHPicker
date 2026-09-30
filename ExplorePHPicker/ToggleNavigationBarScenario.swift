@@ -32,7 +32,7 @@ class PickerNavigationBarHostingController: UIViewController {
 
     var pickerNavigationBarVisible = true {
         didSet {
-            pickerController.navigationBarVisible = pickerNavigationBarVisible
+//            pickerController.navigationBarVisible = pickerNavigationBarVisible
             view.setNeedsUpdateConstraints()
         }
     }
