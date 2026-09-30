@@ -78,6 +78,11 @@ class ScenarioSelectionController: UITableViewController {
                 UIImagePickerControllerScenario(),
                 PrivateAPIOpenToSearchScenario(),
             ])
+            if #available(iOS 27.0, *) {
+                snapshot.appendItems([
+                    SearchTextScenario(),
+                ])
+            }
 
             snapshot.appendSections([1])
             snapshot.appendItems([
